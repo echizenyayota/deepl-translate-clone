@@ -7,6 +7,7 @@ const App = () => {
   return (
     <div className="app">
       <TextBox style="input" />
+        <Arrows />
       <TextBox style="output" />
     </div>
   );
