@@ -1,8 +1,23 @@
-const Modal = ({setShowModal}) => {
+import { useState } from "react";
+
+const Modal = ({ setShowModal, chosenLanguage, setChosenLanguage }) => {
+
+  const [selectedOption, setSelectedOption] = useState("");
+
+  const handleSelectedChange = (e) => {
+    setSelectedOption(e.target.value);
+  }
+
+  console.log(selectedOption);
+
   return (
     <div className="option-list">
       <div className="search-bar">
-        <select className="source-language">
+        <select 
+          className="source-language"
+          value={selectedOption}
+          onChange={handleSelectedChange}
+        >
           <option value="BG">BG</option>
           <option value="CS">CS</option>
           <option value="DA">DA</option>
