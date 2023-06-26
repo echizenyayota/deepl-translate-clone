@@ -6,8 +6,8 @@ import { useState } from "react";
 
 const App = () => {
   const [showModal, setShowModal] = useState(null);
-  const [inputLanguage, setInputLanguage] = useState("English");
-  const [outputLanguage, setOutputLanguage] = useState("Japanese");
+  const [inputLanguage, setInputLanguage] = useState("EN");
+  const [outputLanguage, setOutputLanguage] = useState("JA");
   
   const handleClick = () => {
     setInputLanguage(outputLanguage);
@@ -34,7 +34,7 @@ const App = () => {
         />
       </>}
 
-      {showModal && <Modal />}
+      {showModal && <Modal setShowModal={setShowModal} />}
     </div>
   );
 }
