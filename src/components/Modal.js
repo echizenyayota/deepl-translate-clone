@@ -46,5 +46,4 @@ const Modal = ({setShowModal}) => {
     </div>
   )
 }
-
 export default Modal;

@@ -14,8 +14,6 @@ const App = () => {
     setOutputLanguage(inputLanguage);
   }
 
-  console.log("showModal", showModal);
-
   return (
     <div className="app">
       {!showModal && <>
