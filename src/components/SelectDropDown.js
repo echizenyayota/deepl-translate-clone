@@ -1,4 +1,8 @@
-const SelectDropDown = ({ style, setShowModal, selectedLanguage }) => {
+const SelectDropDown = ({ 
+  style, 
+  setShowModal, 
+  selectedLanguage,
+ }) => {
   return (
     <div className="select-drop-down">
       <input value={selectedLanguage} onClick={() => setShowModal(style)}/>
