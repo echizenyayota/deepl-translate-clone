@@ -9,6 +9,12 @@ const TextBox = ({
   translatedText,
   setTranslatedText
 }) => {
+  
+  const handleClick = () => {
+    setTextToTranslate("");
+    setTranslatedText("");
+  }
+
   return (
     <div className={style}>
       <SelectDropDown 
@@ -22,6 +28,10 @@ const TextBox = ({
         onChange={(e) => setTextToTranslate(e.target.value)}
         value={style === "input" ? textToTranslate: translatedText }
       />
+      { style === "input" && (
+        <div className="delete" onClick={handleClick}>X</div>
+      ) }
+
     </div>
   )
 }
