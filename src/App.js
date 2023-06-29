@@ -13,28 +13,15 @@ const App = () => {
   const [translatedText, setTranslatedText] = useState("");
 
   const translate = async () => {
-
-    const options = {
-      method: 'GET',
-      url: 'https://deepl-translate-machine.p.rapidapi.com/v1/translate/text',
-      params: {
-        target: outputLanguage,
-        source: inputLanguage,
-        text: textToTranslate
-      },
-      headers: {
-        'X-RapidAPI-Key': process.env.RAPID_API_KEY,
-        'X-RapidAPI-Host': process.env.RAPID_API_HOST
-      }
-    };
-
-    try {
-      const response = await axios.request(options);
-      console.log(response.data);
-      setTranslatedText(response.data.data.texts[0].text);
-    } catch (error) {
-      console.error(error);
+    const data = {
+      outputLanguage, 
+      inputLanguage, 
+      textToTranslate
     }
+    const response = await axios("http://localhost:8000/translation", {
+      params: data
+    });
+    setTranslatedText(response.data);
   }
   
   const handleClick = () => {
